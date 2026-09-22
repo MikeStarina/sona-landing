@@ -1,0 +1,92 @@
+/* --element-index is a custom property that is used to track the index of the element in the features__mediaPlate */
+@property --element-index {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 1;
+}
+
+@keyframes mediaPlateMoveElementAnimation {
+    0% {
+        offset-distance: 25%;
+        opacity: 0;
+    }
+
+    100% {
+        offset-distance: calc(75% + 100% / 8 * (var(--element-index) - 1));
+        opacity: 1;
+    }
+}
+
+@keyframes mediaPlateTextIntroAnimation {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.plates {
+    width: 400px;
+    height: 400px;
+    ;
+    aspect-ratio: 1 / 1;
+}
+
+.plates__mediaPlate {
+    --element-index: 1;
+    offset-path: circle(160px at 50% 50%);
+    offset-rotate: 0deg;
+    width: 140px;
+    min-width: 140px;
+    min-height: 140px;
+    height: 140px;
+    max-height: 140px;
+    max-width: 140px;
+    border-radius: 50%;
+    border-top: 2px solid oklch(1 0 0);
+    border-left: 2px solid oklch(1 0 0);
+    box-shadow: 0px 3px 10px 0px oklch(0.6 0 0 / 0.1) inset,
+        0px 20px 50px 0px oklch(0 0 0 / 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: oklch(0 0 0);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 0% 0%, oklch(0 0 0 / .1) 0%, oklch(1 0 0 / 1) 75%),
+        radial-gradient(circle at 100% 100%, oklch(1 0 0 / 1) 0%, transparent 40%),
+        linear-gradient(to top, oklch(1 0 0 / 1) 0%, oklch(1 0 0 / 0.2) 40%), oklch(0.99 0 0 / 1);
+    position: relative;
+    transition: transform 0.15s ease-in;
+    will-change: transform;
+    transform: scale(1);
+    cursor: pointer;
+    offset-distance: 0%;
+    z-index: calc(90 - var(--element-index));
+    animation-name: mediaPlateMoveElementAnimation;
+    animation-duration: 850ms;
+    animation-timing-function: cubic-bezier(0.33, 1.25, 0.46, 1);
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+
+.plates__mediaPlate img {
+    width: 60px;
+    height: auto;
+}
+
+.plates__mediaPlate:hover {
+    transform: scale(1.03);
+}

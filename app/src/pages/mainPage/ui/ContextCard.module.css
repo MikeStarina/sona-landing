@@ -1,0 +1,81 @@
+/* card start */
+.contextCard {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    box-shadow: 0px 3px 10px 0px oklch(0.6 0 0 / 0.1) inset,
+      0px 20px 50px 0px oklch(0 0 0 / 0.1);
+    border-radius: 32px;
+    /* background: oklch(1 0 0 / 0.1); */
+    background:
+      radial-gradient(circle at 0% 0%, oklch(0 0 0 / .02) 0%, oklch(1 0 0 / 0.5) 75%);
+    /* radial-gradient(circle at 100% 100%, oklch(1 0 0 / 1) 0%, transparent 40%), */
+    /* linear-gradient(to top, oklch(1 0 0 / 1) 0%, oklch(1 0 0 / 0.2) 40%), oklch(0.99 0 0 / 1); */
+    backdrop-filter: blur(10px) saturate(120%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 456px;
+    z-index: 1;
+  }
+  
+  .contextCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    padding: 2px;
+    background: linear-gradient(30.32deg, oklch(1 0 0 / 0.1) -0.02%, oklch(1 0 0 / 0.6) 15%, oklch(1 0 0 / 0.6) 70%, oklch(1 0 0 / 0.1) 99.02%);
+    -webkit-mask:
+      linear-gradient(oklch(1 0 0) 0 0) content-box,
+      linear-gradient(oklch(1 0 0) 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .contextCard__textBlock {
+    width: 100%;
+    height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .contextCard__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+  }
+  
+  .contextCard__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+    max-width: 306px;
+  }
+  
+  .contextCard__cover {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    height: 283px;
+  }
+  
+  .contextCard__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* card end */

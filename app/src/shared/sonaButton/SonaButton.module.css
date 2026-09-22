@@ -1,0 +1,58 @@
+:where(.sonaButton) {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transform: scale(1);
+    transition: transform 0.15s ease-in;
+    padding: 12px 20px 12px 12px;
+    border-radius: 999px;
+    color: oklch(0 0 0), black;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: center;
+    will-change: transform;
+}
+
+:where(.sonaButton):hover {
+    transform: scale(1.01);
+}
+
+:where(.sonaButton):active {
+    transform: scale(0.99);
+}
+
+.sonaButton_white {
+    box-shadow:
+        3px 5px 15px 0px oklch(0.6 0 0 / 10%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    background: linear-gradient(to top, oklch(1 0 0 / 1) 0%, oklch(1 0 0 / 0.2) 40%), oklch(1 0 0 / 0.2);
+    color: oklch(0 0 0 / 1);
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+}
+
+.sonaButton_transparent {
+    color: oklch(0 0 0);
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+    box-shadow:
+        3px 5px 15px 0px oklch(1 0 0 / 50.2%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    backdrop-filter: blur(5px) saturate(120%);
+}
+
+.sonaButton_blue {
+    color: oklch(1 0 0);
+    box-shadow: 
+    0px 5px 10px 0px oklch(0 0 0 / 10.2%),
+    0px 5.31px 15.94px 0px oklch(1 0 0 / 50.2%) inset;
+    /* background: linear-gradient(0deg, oklch(1 0 0 / 1%), oklch(1 0 0 / 1%)),
+        linear-gradient(43.15deg, oklch(0.6975 0.1637 251.58) 2.93%, oklch(0.6007 0.216 266.02) 96.97%); */
+        background: oklch(0.6113 0.2128 256.71);
+}

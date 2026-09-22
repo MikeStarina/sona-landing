@@ -1,0 +1,72 @@
+.tabs {
+    height: 46px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 999px;
+    text-align: center;
+    will-change: transform;
+    position: relative;
+}
+
+.tabs__highlight {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    bottom: 4px;
+    width: calc(100% - 4px);
+    box-shadow: 0px 3.21px 6.42px 0px #0000001A, 0px 3.41px 10.23px 0px #FFFFFF80 inset;
+    background: oklch(0.624254 0.205577 255.4861);
+    padding: 9px 12px;
+    border-radius: 999px;
+    color: oklch(1 0 0 / 1);
+    z-index: -1;
+    transition:
+  left 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+  max-width 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tabs__item {
+    padding: 9px 12px;
+    border-radius: 999px;
+    color: oklch(0 0 0), black;
+    transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.tabs__item:hover:not(.tabs__item_active) {
+    color: oklch(0 0 0 / 0.5);
+}
+
+.tabs__item_active {
+    color: oklch(1 0 0 / 1);
+    font-weight: 500;
+}
+
+.tabs__description {
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.tabs__appearance {
+    box-shadow:
+        3px 5px 15px 0px oklch(0.6 0 0 / 10%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    background: linear-gradient(to top, oklch(1 0 0 / 1) 0%, oklch(1 0 0 / 0.2) 40%), oklch(1 0 0 / 0.2);
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+}
+
+.tabs__appearance_description {
+    background: linear-gradient(to top, oklch(1 0 0 / 0.5) 0%, oklch(1 0 0 / 0.1) 40%), oklch(1 0 0 / 0.1);
+}

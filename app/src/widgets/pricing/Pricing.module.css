@@ -1,0 +1,231 @@
+.pricing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 40px;
+}
+
+.pricing__cardsList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: 502px;
+    gap: 24px;
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.pricing__cardsListItem {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Card */
+.card {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.card>svg {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+}
+
+.card__header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.card__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    z-index: 1;
+}
+
+.card__appearance {}
+
+.card__appearance_white {
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+    box-shadow:
+        3px 5px 15px 0px oklch(0.6 0 0 / 10%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    background: linear-gradient(to top, oklch(1 0 0 / 1) 0%, oklch(1 0 0 / 0.2) 40%), oklch(1 0 0 / 0.2);
+}
+
+.card__appearance_blue {
+    color: oklch(1 0 0);
+    box-shadow:
+        3px 5px 15px 0px oklch(1 0 0 / 50.2%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    background: linear-gradient(0deg, oklch(1 0 0 / 1%), oklch(1 0 0 / 1%)),
+        linear-gradient(43.15deg, oklch(0.6975 0.1637 251.58) 2.93%, oklch(0.6007 0.216 266.02) 96.97%),
+        white;
+}
+
+.card__appearance_transparent {
+    color: oklch(1 0 0);
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+    box-shadow:
+        3px 5px 15px 0px oklch(1 0 0 / 50.2%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    backdrop-filter: blur(5px) saturate(120%);
+}
+
+.card__price {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: left;
+}
+
+.card__price span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.card__price_black {
+    text-shadow: 0px 0px 20px 0px oklch(1 0 0 / 30.2%);
+    color: transparent;
+    background: linear-gradient(180deg, oklch(0 0 0) 0%, oklch(0 0 0 / 50%) 100%);
+    background-clip: text;
+}
+
+.card__price_black span {
+    color: oklch(0 0 0 / 50%);
+}
+
+
+.card__price_white {
+    text-shadow: 0px 0px 20px 0px oklch(1 0 0 / 10.2%);
+    color: transparent;
+    background: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(1 0 0 / 70%) 100%);
+    background-clip: text;
+}
+
+.card__price_black span {
+    color: oklch(1 0 0 / 50%);
+}
+
+.card__featuresList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    gap: 12px;
+    list-style-type: none;
+    width: 100%;
+}
+
+.card__featuresListItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -1%;
+}
+
+.card__featuresListItem_black {
+    color: oklch(0 0 0 / 80%) !important;
+}
+
+.card__featuresListItem_white {
+    color: oklch(1 0 0);
+}
+
+.card__featureIcon {
+    border-radius: 50%;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__iconAppearance_white {
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+    box-shadow:
+        3px 5px 15px 0px oklch(0.6 0 0 / 10%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    background: linear-gradient(to top, oklch(1 0 0 / 1) 0%, oklch(1 0 0 / 0.2) 40%), oklch(1 0 0 / 0.2);
+}
+
+.card__iconAppearance_blue {
+    border-top: 1px solid oklch(1 0 0);
+    border-left: 1px solid oklch(1 0 0);
+    border-bottom: 1px solid oklch(1 0 0);
+    box-shadow:
+        3px 5px 15px 0px oklch(0.6 0 0 / 10%) inset,
+        0px 15px 40px 0px oklch(0 0 0 / 10.2%);
+    background: linear-gradient(to top, oklch(1 0 0 / 0.5) 0%, oklch(1 0 0 / 0.1) 40%), oklch(1 0 0 / 0.1);
+}
+
+.card__availableOn {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+    color: oklch(0 0 0 / 50%);
+    align-self: center;
+}
+
+.card__availableOn_white {
+    color: oklch(0 0 0 / 50%) !important;
+}
+
+.card__availableOn_blue {
+    color: oklch(1 0 0 / 50%) !important;
+}
+
+.card__ctaButton {
+    width: 100%;
+    padding: 16px 0;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -1%;
+}
+
+.card__logo {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
