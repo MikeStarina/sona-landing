@@ -1,0 +1,242 @@
+@keyframes slide {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    12.5% {
+        transform: translate(0, 50%);
+    }
+
+    25% {
+        transform: translate(50%, 50%);
+    }
+
+    37.5% {
+        transform: translate(50%, -100%);
+    }
+
+    50% {
+        transform: translate(-100%, -100%);
+    }
+
+    62.5% {
+        transform: translate(-100%, -50%);
+    }
+
+    75% {
+        transform: translate(-50%, -200%);
+    }
+
+    87.5% {
+        transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+@keyframes glow-breathe {
+    0% {
+        --glow-w: 45%;
+    }
+
+    33% {
+        --glow-w: 42%;
+    }
+
+    66% {
+        --glow-w: 47%;
+    }
+
+    100% {
+        --glow-w: 45%;
+    }
+}
+
+@property --glow-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 45%;
+}
+
+@property --glow-h {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 85%;
+}
+
+@property --green-gradient-width {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+
+
+.glassFrame__overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 80px;
+    padding: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.glassFrame__overlayContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.glassFrame__overlayLeft {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.glassFrame__overlayLeftBlur {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 50%;
+    backdrop-filter: blur(5px);
+    mask: linear-gradient(to right, transparent 0%, black 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.glassFrame__overlayLeftFade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 0%, black 100%);
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(to left, oklch(1 0 0 / .9) 10%, transparent 75%);
+}
+
+.glassFrame__overlayLeftInner {
+    --glow-w: 45%;
+    --glow-h: 85%;
+    --green-gradient-width: 0%;
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse var(--green-gradient-width) 85% at 100% 50%,
+            oklch(0.80046 0.237942 146.9935) -10%,
+            transparent 45%),
+        radial-gradient(ellipse var(--glow-w) var(--glow-h) at 100% 50%,
+            oklch(0.6058 0.23045 259.4745) -10%,
+            transparent 45%);
+        /* linear-gradient(to left, oklch(1 0 0 / .9) 10%, transparent 75%); */
+    z-index: 3;
+    pointer-events: none;
+    animation: glow-breathe 2.4s ease-in-out infinite;
+}
+
+.glassFrame__overlayDots {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.glassFrame__dot {
+    width: 3px;
+    height: 3px;
+    background-color: oklch(1 0 0);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    animation: slide 8s ease-in-out infinite;
+}
+
+.glassFrame__overlayRight {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.glassFrame__overlayRight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    backdrop-filter: blur(5px);
+    mask: linear-gradient(to left, transparent 50%, black 100%);
+    z-index: 1;
+}
+
+.glassFrame__overlayRight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, oklch(1 0 0 / .9) 0%, transparent 25%);
+    ;
+    z-index: 2;
+}
+
+.statusContainer {
+    width: 100%;
+    height: 54px;
+    position: relative;
+}
+
+.status {
+    padding: 12px 18px;
+    background-color: oklch(0.6058 0.23045 259.4745);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    color: oklch(1 0 0);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    width: fit-content;
+    min-width: 350px;
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    will-change: transform;
+}
+
+.status__figure {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: oklch(0.6058 0.23045 259.4745);
+}
+
+.status p {
+    white-space: nowrap;
+}
+
+.status span {
+    font-weight: 400;
+}
+
+.status__percent {
+    min-width: 4ch;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 400;
+}

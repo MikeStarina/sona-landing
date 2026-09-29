@@ -1,0 +1,111 @@
+{
+    "duration": 6.398687232,
+    "text": " Hey Sona, can you figure out what's going on with this project and just handle everything that needs to get done?",
+    "words": [
+        {
+            "word": "Hey",
+            "start": 0.38,
+            "end": 0.54
+        },
+        {
+            "word": "Sona,",
+            "start": 0.54,
+            "end": 1.12
+        },
+        {
+            "word": "can",
+            "start": 1.12,
+            "end": 1.24
+        },
+        {
+            "word": "you",
+            "start": 1.24,
+            "end": 1.38
+        },
+        {
+            "word": "figure",
+            "start": 1.38,
+            "end": 1.66
+        },
+        {
+            "word": "out",
+            "start": 1.66,
+            "end": 1.94
+        },
+        {
+            "word": "what's",
+            "start": 1.94,
+            "end": 2.18
+        },
+        {
+            "word": "going",
+            "start": 2.18,
+            "end": 2.44
+        },
+        {
+            "word": "on",
+            "start": 2.44,
+            "end": 2.6
+        },
+        {
+            "word": "with",
+            "start": 2.6,
+            "end": 2.76
+        },
+        {
+            "word": "this",
+            "start": 2.76,
+            "end": 2.88
+        },
+        {
+            "word": "project",
+            "start": 2.88,
+            "end": 3.24
+        },
+        {
+            "word": "and",
+            "start": 3.24,
+            "end": 3.74
+        },
+        {
+            "word": "just",
+            "start": 3.74,
+            "end": 4.28
+        },
+        {
+            "word": "handle",
+            "start": 4.28,
+            "end": 4.62
+        },
+        {
+            "word": "everything",
+            "start": 4.62,
+            "end": 5.04
+        },
+        {
+            "word": "that",
+            "start": 5.04,
+            "end": 5.26
+        },
+        {
+            "word": "needs",
+            "start": 5.26,
+            "end": 5.48
+        },
+        {
+            "word": "to",
+            "start": 5.48,
+            "end": 5.64
+        },
+        {
+            "word": "get",
+            "start": 5.64,
+            "end": 5.82
+        },
+        {
+            "word": "done?",
+            "start": 5.82,
+            "end": 6.08
+        }
+    ]
+}
