@@ -8,6 +8,8 @@ import { FooterNavigation } from './src/entities/footerNavigation';
 import { Plates, GlassFrame, Roadmap, CasesBlock, ContextCard } from './src/pages/mainPage';
 import { DEMO_SCREEN_LIST } from './src/pages/mainPage/model/DEMO_SCREEN_DURATIONS';
 import { CONTEXT_SCREEN_CARDS } from './src/pages/mainPage/model/CONTEXT_SCREEN_CARDS';
+import { Lens } from './src/pages/mainPage/ui/Lens';
+// import { MainVideo } from './src/pages/mainPage/ui/MainVideo';
 
 export default function Home() {
   return (
@@ -16,20 +18,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className={styles.hero}>
           {/* Lens */}
-          <div className={styles.hero__lens}>
-            <div className={styles.hero__lensContent}>
-              <h1 className={styles.hero__title}>Your personal<br />voice agent</h1>
-              <p className={styles.hero__description}>
-                for macOS
-              </p>
-            </div>
-            <SonaButton appearance="transparent" className={styles.hero__ctaButton}>
-              <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.000976562 10.4863V0.998047C0.000976562 0.321289 0.390625 0 0.855469 0C1.06055 0 1.27246 0.0615234 1.48438 0.177734L9.44824 4.83301C10.0156 5.16113 10.207 5.37988 10.207 5.74219C10.207 6.09766 10.0156 6.32324 9.44824 6.65137L1.48438 11.3066C1.27246 11.416 1.06055 11.4844 0.855469 11.4844C0.390625 11.4844 0.000976562 11.1631 0.000976562 10.4863Z" fill="white" />
-              </svg>
-              Watch Demo
-            </SonaButton>
-          </div>
+          <Lens />
           {/* Content */}
           <div className={styles.hero__content}>
             <p className={styles.hero__contentTitle}>
@@ -42,6 +31,7 @@ export default function Home() {
         </section>
         {/* Video Screen Section */}
         <section className={styles.videoScreeen}>
+          {/* <MainVideo /> */}
           <div className={styles.videoScreeen__container}>
             <p className={styles.videoScreeen__title}>
               Sona understands, acts, and remembers. When you need text, just dictate.

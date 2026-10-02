@@ -1,5 +1,6 @@
 'use client';
-
+import dynamic from 'next/dynamic';
+const Glass = dynamic(() => import('@samasante/liquid-glass').then(mod => mod.Glass), { ssr: false });
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';

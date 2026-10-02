@@ -155,6 +155,9 @@ export const buildGlassFrameTimeline = (targets: GlassFrameTimelineTargets) => {
     statusTl.call(() => {
         label.textContent = 'Search and analyze';
     }, undefined, 2);
+    statusTl.call(() => {
+        label.textContent = 'Taking action';
+    }, undefined, 4.5);
     statusTl.to(overlayLeftInner, { '--green-gradient-width': '15%', duration: CUE_DURATION }, '>');
     statusTl.call(() => {
         label.textContent = 'Remember';
