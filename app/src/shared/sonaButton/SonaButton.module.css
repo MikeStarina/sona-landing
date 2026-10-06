@@ -38,21 +38,20 @@
 
 .sonaButton_transparent {
     color: oklch(0 0 0);
-    border-top: 1px solid oklch(1 0 0);
-    border-left: 1px solid oklch(1 0 0);
-    border-bottom: 1px solid oklch(1 0 0);
+    border-top: 1px solid oklch(1 0 0 / 60%);
+    border-left: 1px solid oklch(1 0 0 / 60%);
     box-shadow:
         3px 5px 15px 0px oklch(1 0 0 / 50.2%) inset,
         0px 15px 40px 0px oklch(0 0 0 / 10.2%);
-    backdrop-filter: blur(5px) saturate(120%);
+    backdrop-filter: blur(3px) saturate(120%);
 }
 
 .sonaButton_blue {
     color: oklch(1 0 0);
+    border-top: 1px solid oklch(1 0 0 / 60%);
+    border-left: 1px solid oklch(1 0 0 / 60%);
     box-shadow: 
     0px 5px 10px 0px oklch(0 0 0 / 10.2%),
     0px 5.31px 15.94px 0px oklch(1 0 0 / 50.2%) inset;
-    /* background: linear-gradient(0deg, oklch(1 0 0 / 1%), oklch(1 0 0 / 1%)),
-        linear-gradient(43.15deg, oklch(0.6975 0.1637 251.58) 2.93%, oklch(0.6007 0.216 266.02) 96.97%); */
         background: oklch(0.6113 0.2128 256.71);
 }
