@@ -1,7 +1,10 @@
+'use client';
+import React from 'react';
 import styles from './Roadmap.module.css';
 import Image from 'next/image';
 import { ROADMAP_DATA_LEFT_CARD, ROADMAP_DATA_RIGHT_CARD } from '../model/ROADMAP_DATA';
 import { SonaButton } from '../../../shared/sonaButton/SonaButton';
+
 
 export const Roadmap = () => {
     return (
@@ -34,7 +37,7 @@ export const Roadmap = () => {
                 <div className={styles.mode__cardImage}>
                     <div className={styles.mode__roadmapContainer}>
                         {ROADMAP_DATA_LEFT_CARD.map((item, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 <div className={styles.mode__roadmapItem}>
                                     <div className={styles.mode__roadmap}>
                                         <p className={styles.mode__roadmapItemText}>{item.text}</p>
@@ -63,7 +66,7 @@ export const Roadmap = () => {
                                         </svg>
                                     )
                                 }
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
                     <Image src="/mode_card_left.png" alt="mode image" width={866} height={581} unoptimized />
@@ -86,18 +89,18 @@ export const Roadmap = () => {
                 <div className={styles.mode__cardImage}>
                     <div className={styles.mode__roadmapContainer}>
                         {ROADMAP_DATA_RIGHT_CARD.map((item, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 <div className={styles.mode__roadmapItem}>
                                     <div className={styles.mode__roadmap}>
                                         <p className={styles.mode__roadmapItemText}>{item.text}</p>
                                         <div className={styles.mode__roadmapItemIcon}>
-
                                             {item.icons?.map((icon, iconIdx) => {
                                                 return (
                                                     <SonaButton
                                                         key={iconIdx}
                                                         style={{ padding: '3px 8px', fontWeight: 400 }}
                                                         renderAsSpan
+                                                        appearance={icon.buttonAppearance as 'white' | 'blue' | 'transparent' | undefined}
                                                     >
                                                         {icon.icon ?? ''}
                                                         {icon.label ?? ''}
@@ -115,7 +118,7 @@ export const Roadmap = () => {
                                         </svg>
                                     )
                                 }
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
                     <Image src="/mode_card_right.png" alt="mode image" width={866} height={581} unoptimized />

@@ -1,8 +1,18 @@
 'use client';
-
+import { useLayoutEffect, useState } from 'react';
 import styles from './GlassFrameStatus.module.css';
 
 export const GlassFrameStatus = () => {
+    const [dots, setDots] = useState<Array<{top: string; right: string; animationDelay: string}> | null>(null);
+
+    useLayoutEffect(function EF_initDots() {
+        const dots = Array.from({ length: 50 }).map((_) => ({
+            top: `${20 + Math.random() * 60}%`,
+            right: `${0 + Math.random() * 25}%`,
+            animationDelay: `${Math.random() * 1000}ms`,
+        }));
+        setDots(dots);
+    }, []);
     return (
         <div className={styles.glassFrame__overlay}>
             <div className={styles.statusContainer} data-gf="status-container">
@@ -27,11 +37,11 @@ export const GlassFrameStatus = () => {
                     <div className={styles.glassFrame__overlayLeftBlur} data-gf="overlay-left-blur"></div>
                     <div className={styles.glassFrame__overlayLeftFade} data-gf="overlay-left-fade"></div>
                     <div className={styles.glassFrame__overlayDots} data-gf="overlay-dots">
-                        {Array.from({ length: 50 }).map((_, index) => (
+                        {dots?.map((dot, index) => (
                             <span key={index} className={styles.glassFrame__dot} style={{
-                                top: `${20 + Math.random() * 60}%`,
-                                right: `${0 + Math.random() * 25}%`,
-                                animationDelay: `${Math.random() * 1000}ms`,
+                                top: dot.top,
+                                right: dot.right,
+                                animationDelay: dot.animationDelay,
                             }}></span>
                         ))}
                     </div>
