@@ -23,6 +23,8 @@ export type GlassFrameTimelineTargets = {
     overlayLeftBlur: HTMLElement;
     overlayLeftFade: HTMLElement;
     overlayDots: HTMLElement;
+    iconProgress: HTMLElement;
+    iconCheck: HTMLElement;
 };
 
 export const buildGlassFrameTimeline = (targets: GlassFrameTimelineTargets) => {
@@ -46,6 +48,8 @@ export const buildGlassFrameTimeline = (targets: GlassFrameTimelineTargets) => {
         overlayLeftBlur,
         overlayLeftFade,
         overlayDots,
+        iconProgress,
+        iconCheck,
     } = targets;
     const rows = gsap.utils.toArray<HTMLElement>(buttonsContainer.children);
     const buttons = rows.flatMap((row) => gsap.utils.toArray<HTMLElement>(row.children));
@@ -105,6 +109,8 @@ export const buildGlassFrameTimeline = (targets: GlassFrameTimelineTargets) => {
     voice.set(overlayRight, { autoAlpha: 0 }, 0);
     voice.set(caption, { overflow: 'hidden' }, 0);
     voice.set(overlayDots, { autoAlpha: 0 }, 0);
+    voice.set(iconProgress, { autoAlpha: 1, scale: 1 }, 0);
+    voice.set(iconCheck, { autoAlpha: 0, scale: 0 }, 0);
     voice.call(() => {
         label.textContent = 'Understanding Context';
         applyEq(0);
@@ -162,6 +168,8 @@ export const buildGlassFrameTimeline = (targets: GlassFrameTimelineTargets) => {
     statusTl.call(() => {
         label.textContent = 'Remember';
     }, undefined, 6);
+    statusTl.to(iconProgress, { autoAlpha: 0, scale: 0 }, 6);
+    statusTl.to(iconCheck, { autoAlpha: 1, scale: 1, duration: CUE_DURATION }, 6);
     statusTl.to(overlayLeftInner, { '--glow-w': '0%', '--glow-h': '0', duration: 0 }, 6);
     statusTl.to(overlayLeftInner, { '--green-gradient-width': '45%', duration: CUE_DURATION / 2 }, 6);
     statusTl.fromTo(figure,

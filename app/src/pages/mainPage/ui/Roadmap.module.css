@@ -6,6 +6,10 @@
   gap: 210px;
   position: relative;
   width: 100%;
+
+  @media (max-width: 1300px) {
+   gap: 105px;
+  }
 }
 
 .mode__card {
@@ -210,6 +214,10 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.02em;
+}
+
+.mode__roadmapItemText {
+  white-space: nowrap;
 }
 
 .mode__roadmapItemIcon {

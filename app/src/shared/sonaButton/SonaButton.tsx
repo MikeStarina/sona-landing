@@ -2,7 +2,7 @@
 import styles from './SonaButton.module.css';
 import Link from 'next/link';
 
-export interface SonaButtonProps {
+export interface SonaButtonProps extends React.AriaAttributes {
     children?: React.ReactNode;
     onClick?: () => void;
     className?: string;
@@ -28,12 +28,13 @@ export const SonaButton: React.FC<SonaButtonProps> = ({
     renderAsSpan = false,
     appearance = 'white',
     id,
+    ...ariaProps
 }) => {
     const appearanceClass = styles[`sonaButton_${appearance}`];
 
     if (renderAsSpan) {
         return (
-            <span className={`${styles.sonaButton} ${appearanceClass} ${className}`} style={style} id={id}>
+            <span className={`${styles.sonaButton} ${appearanceClass} ${className}`} style={style} id={id} {...ariaProps}>
                 {children ?? ''}
             </span>
         );
@@ -48,6 +49,7 @@ export const SonaButton: React.FC<SonaButtonProps> = ({
                 onClick={onClick}
                 style={style}
                 id={id}
+                {...ariaProps}
             >
                 {children ?? ''}
             </Link>
@@ -60,6 +62,7 @@ export const SonaButton: React.FC<SonaButtonProps> = ({
             style={style}
             id={id}
             disabled={disabled}
+            {...ariaProps}
         >
             {children ?? ''}
         </button>

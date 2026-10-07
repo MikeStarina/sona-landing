@@ -36,7 +36,9 @@ export const GlassFrame = () => {
         const overlayLeftBlur = q('[data-gf="overlay-left-blur"]')[0] as HTMLElement | undefined;
         const overlayLeftFade = q('[data-gf="overlay-left-fade"]')[0] as HTMLElement | undefined;
         const overlayDots = q('[data-gf="overlay-dots"]')[0] as HTMLElement | undefined;
-        if (!statusContainer || !status || !percent || !label || !figure || !overlayLeft || !overlayRight || !caption || !buttonsContainer || !overlayLeftInner || !overlayLeftBlur || !overlayLeftFade || !overlayDots) {
+        const iconProgress = q('[data-gf="icon-progress"]')[0] as HTMLElement | undefined;
+        const iconCheck = q('[data-gf="icon-check"]')[0] as HTMLElement | undefined;
+        if (!statusContainer || !status || !percent || !label || !figure || !overlayLeft || !overlayRight || !caption || !buttonsContainer || !overlayLeftInner || !overlayLeftBlur || !overlayLeftFade || !overlayDots || !iconProgress || !iconCheck) {
             return;
         }
 
@@ -57,6 +59,8 @@ export const GlassFrame = () => {
                 overlayLeftBlur,
                 overlayLeftFade,
                 overlayDots,
+                iconProgress,
+                iconCheck,
             });
 
             const observer = new IntersectionObserver(

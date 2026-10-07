@@ -65,6 +65,19 @@
     letter-spacing: -0.02em;
     width: 175%;
     height: 182px;
+
+    @media (max-width: 1400px) {
+        font-size: 46px;
+        line-height: 50px;
+    }
+    @media (max-width: 1350px) {
+        width: 170%;
+    }
+    @media (max-width: 1250px) {
+        width: 150%;
+        font-size: 36px;
+        line-height: 40px;
+    }
 }
 
 .glassFrame__word {

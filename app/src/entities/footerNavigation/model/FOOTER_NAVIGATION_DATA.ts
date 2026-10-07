@@ -14,25 +14,25 @@ export const FOOTER_NAVIGATION_DATA: IFooterNavigationItem[] = [
   {
     label: 'Product',
     links: [
-        {label: 'Dictation', href: '/dictation', hash: '#dictation'},
-        {label: 'Agent', href: '/agent', hash: '#agent'},
-        {label: 'Memory', href: '/memory', hash: '#memory'},
+        {label: 'Dictation', href: '/', hash: '#href-product'},
+        {label: 'Agent', href: '/', hash: '#href-product'},
+        {label: 'Memory', href: '/', hash: '#href-product'},
     ]
   },
   {
     label: 'On this page',
     links: [
-        {label: 'How it works', href: '/', hash: '#how-it-works'},
-        {label: 'Use cases', href: '/', hash: '#use-cases'},
-        {label: 'Manifesto', href: '/', hash: '#manifesto'},
-        {label: 'Pricing', href: '/', hash: '#pricing'},
-        {label: 'FAQ', href: '/', hash: '#faq'},
+        {label: 'How it works', href: '/', hash: '#href-how-it-works'},
+        {label: 'Use cases', href: '/', hash: '#href-use-cases'},
+        {label: 'Manifesto', href: '/', hash: '#href-manifesto'},
+        {label: 'Pricing', href: '/', hash: '#href-pricing'},
+        {label: 'FAQ', href: '/', hash: '#href-faq'},
     ]
   },
   {
     label: 'Company',
     links: [
-        {label: 'Contact us', href: '/', hash: '#contacts'},
+        {label: 'Contact us', href: '/', hash: '#href-contacts'},
     ]
   },
   {

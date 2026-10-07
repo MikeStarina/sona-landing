@@ -32,7 +32,7 @@ export default function Home() {
         {/* Video Screen Section */}
         <section className={styles.videoScreeen}>
           {/* <MainVideo /> */}
-          <div className={styles.videoScreeen__container}>
+          <div className={styles.videoScreeen__container} id="href-demo">
             <p className={styles.videoScreeen__title}>
               Sona understands, acts, and remembers. When you need text, just dictate.
             </p>
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
         </section>
         {/* Features Section */}
-        <section className={styles.features}>
+        <section className={styles.features} id="href-manifesto">
           <Plates />
           <div className={styles.features__textBlock}>
             <h2 className={styles.features__title}>
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </section>
         {/* explainer Section */}
-        <section className={styles.explainer}>
+        <section className={styles.explainer} id="href-how-it-works">
           <div className={styles.explainer__container}>
             <div className={styles.explainer__textBlock}>
               <h2 className={styles.explainer__title}>
@@ -87,7 +87,7 @@ export default function Home() {
           <Image src="/explainer_foreground.png" alt="explainer image" className={`${styles.explainer__image} ${styles.explainer__image_foreground}`} width={1440} height={582} unoptimized />
         </section>
         {/* mode section */}
-        <section className={styles.mode}>
+        <section className={styles.mode} id="href-product">
           <h2 className={styles.mode__title}>
             One voice. <br />Two hotkeys.
           </h2>
@@ -136,7 +136,7 @@ export default function Home() {
           </div>
         </section>
         {/* cases screen section */}
-        <section className={styles.casesScreen}>
+        <section className={styles.casesScreen} id="href-use-cases">
           <div className={styles.casesScreen__textBlock}>
             <h2 className={styles.demoScreen__title} style={{ textAlign: 'left', width: '100%' }}>
               Ask for the outcome. <br />
@@ -161,11 +161,16 @@ export default function Home() {
           <ul className={styles.contextScreen__cards}>
             {CONTEXT_SCREEN_CARDS.map((_, idx) => {
               return (
-                <ContextCard card={_} key={idx} />
+                <li key={idx} className={styles.contextScreen__listItem}>
+                  <ContextCard card={_} />
+                  {idx === CONTEXT_SCREEN_CARDS.length - 1 && <div className={styles.contextScreen__cardCoverEffect}>
+                    </div>
+                  }
+                </li>
               )
             })}
-            <div className={styles.contextScreen__cardCoverEffect}>
-            </div>
+            {/* <div className={styles.contextScreen__cardCoverEffect}>
+            </div> */}
           </ul>
           <SonaButton className={styles.contextScreen__ctaButton}>
             <Image src="/sona_main_logo.png" alt="logo" width={22} height={22} unoptimized />
@@ -177,7 +182,7 @@ export default function Home() {
           <h2 className={styles.pricingScreen__title}>
             Start free
           </h2>
-          <div className={styles.pricingScreen__textBlock}>
+          <div className={styles.pricingScreen__textBlock} id="href-pricing">
             <p className={styles.pricingScreen__subtitle}>Upgrade to Pro when you need more</p>
             <div className={styles.pricingScreen__text}>
               After signing up, every new user gets full access to all Sona features for the first 7 days <br />
@@ -246,8 +251,8 @@ export default function Home() {
             <div className={styles.footer__menu}>
               <span className={styles.footer__asideText}>Voice OS</span>
               <FooterNavigation />
+              <span className={styles.footer__copyright}>&copy; {new Date().getFullYear()} Sona Voice OS</span>
             </div>
-            <span className={styles.footer__copyright}>&copy; {new Date().getFullYear()} Sona Voice OS</span>
           </aside>
         </footer>
       </main>

@@ -100,7 +100,7 @@ export const Roadmap = () => {
                                                 return (
                                                     <SonaButton
                                                         key={iconIdx}
-                                                        style={{ padding: '3px 8px', fontWeight: 400 }}
+                                                        style={{ padding: '3px 8px', fontWeight: 400, width: 'fit-content' }}
                                                         renderAsSpan
                                                         appearance={icon.buttonAppearance as 'white' | 'blue' | 'transparent' | undefined}
                                                     >

@@ -11,7 +11,7 @@
 .pricing__cardsList {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 500px);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 502px;
     gap: 24px;
     margin-top: 24px;
